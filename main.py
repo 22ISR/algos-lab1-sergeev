@@ -11,7 +11,7 @@
 hint: что такое print?
 """
 
-# Замените это своим кодом
+print("Hello world")
 
 """
  _____         _      _____ 
@@ -27,8 +27,19 @@ hint: что такое print?
 hint: цикл, если и "%"
 """
 
-# Замените это своим кодом
+x = int(input("Enter the final number: "))
 
+for i in range(1, x+1):
+    if i % 3 == 0:
+        if i % 5 == 0:
+            print(i, "FizzBuzz")
+        else:
+            print(i, "Fizz")
+    elif i % 5 == 0:
+        print(i, "Buzz")
+    else:
+        print(i)
+            
 """
  _____         _      _____ 
 |_   _|       | |    |____ |
@@ -42,8 +53,17 @@ hint: цикл, если и "%"
 hint: https://ru.wikihow.com/%D0%B2%D1%8B%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D0%B3%D0%BE%D0%B4%D1%8B
 """
 
-# Замените это своим кодом
-
+year = int(input("Enter the year: "))
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("leap yaer")
+        else:
+            print("not a leap year")
+    else:
+        print("leap yaer")
+else:
+    print("not a leap year")
 """
  _____         _        ___ 
 |_   _|       | |      /   |
@@ -57,7 +77,12 @@ hint: https://ru.wikihow.com/%D0%B2%D1%8B%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0
 hint: https://letpy.com/handbook/builtins/reversed/
 """
 
-# Замените это своим кодом
+x = input("Введите число или строку: ")
+y = x[::-1]
+if x == y:
+  print("Строка/число является полидромом")
+else:
+  print("Строка/число неявляется полидромом")
 
 """
  _____         _      _____ 
@@ -72,7 +97,11 @@ hint: https://letpy.com/handbook/builtins/reversed/
 hint: https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB
 """
 
-# Замените это своим кодом
+factorial = 1
+x = int(input('Enter the number for factorial: '))
+for i in range(1, x+1):
+    factorial = factorial * i
+print(factorial)
 
 """
  _____         _       ____ 
@@ -87,8 +116,18 @@ hint: https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D
 hint: x <= 1 - не простые числа
 hint 2: %
 """
-
-# Замените это своим кодом
+x = int(input('Enter the number: '))
+count = 0
+if x <= 1:
+    print('not a prime number')
+else:
+    for i in range (1, x+1):
+        if x % i == 0:
+            count += 1
+    if count != 2:
+        print('not a prime number')
+    else:
+        print('a prime number')
 
 """
  _____         _      ______
@@ -103,7 +142,14 @@ hint 2: %
 hint: циклы
 """
 
-# Замените это своим кодом
+x = int(input('Enter the number: '))
+sum_digits = 0
+while x != 0:
+    a = x % 10
+    x = x // 10
+    sum_digits += a
+print(sum_digits)
+    
 
 """
  _____         _      _____ 
@@ -118,9 +164,13 @@ hint: циклы
 hint: 1, 1, 2, 3 https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8
 hint 2: попробуйте решить с помощью рекурсии
 """
+def fibonacci_limit(x):
+    sequence = []
+    a, b = 0, 1
+    while a <= x:
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
 
-# Замените это своим кодом
-
-
-
-
+x = int(input("Введите число: "))
+print(f"Последовательность Фибоначчи до {x}: {fibonacci_limit(x)}")
